@@ -113,3 +113,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
+import os
+if os.getcwd() == "/app":
+    DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+
